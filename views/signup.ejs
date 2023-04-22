@@ -37,13 +37,13 @@
             <form action="" method="post">
               <input type="text" name="Name" value="<%=locals.name%>" id="Name"
                 class="my-1.5 w-full rounded-md border-[1.5px] border-slate-300 bg-slate-100 px-3.5 py-2 text-slate-500/90 placeholder:text-sm placeholder:text-slate-400/50 focus:border-slate-400 focus:text-slate-800 focus:outline-none"
-                placeholder="Name" autocomplete="off" required/>
+                placeholder="Name" autocomplete="off" required spellcheck="false"/>
               <input type="email" name="Email" value="<%=locals.email%>" id=""
                 class="my-1.5 w-full rounded-md border-[1.5px] border-slate-300 bg-slate-100 px-3.5 py-2 text-slate-500/90 placeholder:text-sm placeholder:text-slate-400/50 focus:border-slate-400 focus:text-slate-800 focus:outline-none"
-                placeholder="Email" autocomplete="off" required/>
+                placeholder="Email" autocomplete="off" required spellcheck="false"/>
               <input type="password" name="Password" value="<%=locals.password%>" id=""
                 class="my-1.5 w-full rounded-md border-[1.5px] border-slate-300 bg-slate-100 px-3.5 py-2 text-slate-500/90 placeholder:text-sm placeholder:text-slate-400/50 focus:border-slate-400 focus:text-slate-800 focus:outline-none"
-                placeholder="Password" autocomplete="off" required/>
+                placeholder="Password" autocomplete="off" required spellcheck="false" minlength="6" maxlength="18"/>
               <div class="buttons flex w-full justify-center py-6">
                 <!-- <button type="button" href="#" class="rounded-md bg-[#ef4444] px-[15%] py-[3%] text-sm font-semibold capitalize text-white">Log in</button> -->
                 <button type="submit"

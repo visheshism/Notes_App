@@ -38,11 +38,11 @@
               <label for="oldEmail" class="text-black font-pops">Current email address:</label>
               <input type="email" name="oldEmail" value="<%=locals.oldEmail%>"
                 class="my-1.5 w-full rounded-md border-[1.5px] border-slate-300 bg-slate-100 px-3.5 py-2 text-slate-500/90 placeholder:text-sm placeholder:text-slate-400/50 focus:border-slate-400 focus:text-slate-800 focus:outline-none"
-                autocomplete="off" required readonly />
+                autocomplete="off" required readonly spellcheck="false"/>
               <label for="newEmail" class="text-black font-pops">New email address:</label>
               <input type="email" name="newEmail" value="<%=locals.newEmail%>"
                 class="my-1.5 w-full rounded-md border-[1.5px] border-slate-300 bg-slate-100 px-3.5 py-2 text-slate-500/90 placeholder:text-sm placeholder:text-slate-400/50 focus:border-slate-400 focus:text-slate-800 focus:outline-none"
-                placeholder="Enter a new email address" autocomplete="off" required />
+                placeholder="Enter a new email address" autocomplete="off" required spellcheck="false"/>
               <div class="buttons flex w-full justify-center py-6 flex-col space-y-4">
                 <button type="submit"
                   class="w-full rounded-md border-[1px] border-[#ef4444] px-[15%] py-[3%] text-base font-semibold capitalize text-[#ef4444] transition-all ease-linear active:bg-[#ef4444] active:text-white">Update</button>

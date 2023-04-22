@@ -257,15 +257,17 @@
         }, 100)
     }
 
-    crossBtn.onclick = () => {
-        setIcon(2)
-        rmvC(body, "overflow-hidden"); addC(overlayBox, "animate-scale100to0");
-        setTimeout(() => {
-            addCH(overlayBox); rmvC(overlayBox, "animate-scale100to0"); rmvC(overlayBox, "animate-scale0to100"); rmvC(overlayBox, "flex"); addCH(boxMain); rmvC(textArea, retColClass(textArea));
-            addC(textArea, "bg-slate-200");
-        }, 400);
 
-    }
+const crossBtnHandler = () => {
+    setIcon(2)
+    rmvC(body, "overflow-hidden"); addC(overlayBox, "animate-scale100to0");
+    setTimeout(() => {
+        addCH(overlayBox); rmvC(overlayBox, "animate-scale100to0"); rmvC(overlayBox, "animate-scale0to100"); rmvC(overlayBox, "flex"); addCH(boxMain); rmvC(textArea, retColClass(textArea));
+        addC(textArea, "bg-slate-200");
+    }, 400);
+
+}
+crossBtn.onclick = crossBtnHandler
 
 
 
@@ -291,15 +293,18 @@
 
             const data = await fetch("/note/" + note.getAttribute("dpity"))
             const jsonData = await data.json();
-
-            setTimeout(() => {
-                if (jsonData.success == true) {
+        crossBtn.onclick = preventDefault
+        setTimeout(() => {
+            if (jsonData && jsonData.success == true) {
+                crossBtn.onclick = crossBtnHandler
                     addCH(skeleton); addCH(textArea); addCH(pView);
                     rmvCH(pView);
                     rmvCH(btn_1); rmvCH(btn_2);
                     pView.innerHTML = jsonData.note.notesDat
                     note.innerHTML = ellipsesformat(pView.innerHTML)
-                } else {
+            } else {
+                crossBtn.onclick = crossBtnHandler
+
                     createNotification("Couldn't fetch this note", 0)
 
                 }
@@ -318,8 +323,12 @@
             const deleteHandler = async () => {
                 createNotification("Note is being deleted", 1, "no")
                 setIcon(1)
-                const data = await postData("/note/" + note.getAttribute("dpity"), {}, "DELETE")
-                if (data.success == true) {
+            crossBtn.onclick = preventDefault
+            deleteBtn.onclick = preventDefault
+            editBtn.onclick = preventDefault
+            const data = await postData("/note/" + note.getAttribute("dpity"), {}, "DELETE")
+            if (data && data.success == true) {
+                crossBtn.onclick = crossBtnHandler
                     setIcon(2)
                     note.remove();
                     createNotification("Note Deleted", 1)
@@ -332,7 +341,11 @@
                         setTimeout(() => rmvC(overlayBox, "animate-scale100to0"), 50);
                     }, 400);
                 } else {
-                    setIcon(0)
+                                    deleteBtn.onclick = deleteHandler
+
+                editBtn.onclick = editButtonHandler
+                crossBtn.onclick = crossBtnHandler
+                setIcon(0)
                     createNotification("Note Deletion Failed", 0)
 
                 }
@@ -385,14 +398,23 @@
                 async function updateButtonClickHandler() {
                     createNotification("Note is being updated", 1, "no")
                     setIcon(1)
+                crossBtn.onclick = preventDefault
+
+                updateBtn.onclick = preventDefault
+                cancelBtn2.onclick = preventDefault
+
                     const data = await postData("/note/" + note.getAttribute("dpity"), { notesData: textArea.value }, "PUT")
-                    if (data.success == true) {
+                    if (data && data.success == true) {
                         setIcon(2)
                         setBox(pView.innerHTML, getIty(note), "view", note);
                         createNotification("Note Updated", 1)
                     } else {
                         setIcon(0)
                         createNotification("Note Updation Failed", 0)
+                    updateBtn.onclick = updateButtonClickHandler
+                    cancelBtn2.onclick = cancelButtonClickHandler
+
+                    crossBtn.onclick = crossBtnHandler
 
                     }
 
@@ -413,6 +435,9 @@
 
     }
 
+function preventDefault(e) {
+    e.preventDefault()
+}
 
     // Example POST method implementation:
     async function postData(url = "", data = {}, method) {
