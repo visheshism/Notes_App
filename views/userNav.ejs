@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/png" href="https://scripts.visheshsingh.com/nico">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Navigation</title>
+  <link rel="stylesheet" href="/styles/userNav.css">
+  <script src="https://scripts.visheshsingh.com/wauejdao.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+  <div
+    class="absolute z-10 flex w-full select-none border-b-[1px] border-b-slate-500/40 bg-orange-700/80 px-6 py-5 shadow-lg transition-all ease-linear">
+    <div class="font-jSans text-2xl font-semibold tracking-wider text-white"><a href="/">Notes App</a></div>
+  </div>
+
+  <div class="flex min-h-screen min-w-[100w] items-center justify-center bg-black/[0.03]">
+    <div
+      class="h-[440px] max-h-[80vh] w-[90vw] max-w-[400px] rounded-lg bg-black/90 text-white shadow-lg shadow-slate-300 pb-5 ">
+      <div class="flex h-full w-full justify-center">
+
+        <div class="relative flex min-h-full min-w-full flex-col items-center justify-center space-y-1 rounded-md p-5">
+          <h2 class="w-[97%] select-none py-6 text-3xl font-bold tracking-widest text-white  text-center font-pops">Hey,
+            <%=name%>!
+          </h2>
+          <h2
+            class="w-[97%] select-none py-6 text-3xl font-bold tracking-wide text-[#47dbd4]  text-center active:scale-95 active:opacity-95 font-jSans">
+            <a href="/me/update/email" target="_self">Change Email <i class="fa fa-envelope"></i></a>
+          </h2>
+          <h2
+            class="w-[97%] select-none py-6 text-3xl font-bold tracking-wide text-[#47dbd4]  text-center active:scale-95 active:opacity-95 font-jSans">
+            <a href="/me/update/password" target="_self">Change Password <i class="fa fa-key"></i></a>
+          </h2>
+          <h2
+            class="w-[97%] select-none py-6 text-3xl font-bold tracking-wide text-[#47dbd4]  text-center active:scale-95 active:opacity-95 font-jSans">
+            <button type="button" id="_logout">Logout <i class="fa fa-sign-out"></i></button>
+          </h2>
+          <a href="/">
+            <button type="button"
+              class="max-w-[240px] rounded-md border-[1px] border-[#ef4444] px-10 py-3 text-base font-semibold capitalize text-[#ef4444] transition-all ease-linear active:bg-[#ef4444] active:text-white">Back
+              to Homepage</button>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+
+    document.getElementById("_logout").onclick = function () {
+      localStorage.removeItem("CurrentThem");
+      location.replace("/logout")
+    }
+    if (window.history.replaceState) {
+      window.history.replaceState(null, null, window.location.href);
+    }
+    document.querySelectorAll("input").forEach((input) => input.oninput = () => {
+      document.querySelector(".__error").style.display = "none"
+    })
+  </script>
+</body>
+
+</html>

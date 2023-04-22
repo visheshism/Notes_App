@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update <%= title %></title>
+  <script src="https://scripts.visheshsingh.com/bie"></script>
+  <link rel="stylesheet" href="/styles/updateSuccess.css">
+</head>
+<body>
+
+  <div
+    class="absolute z-10 flex w-full select-none border-b-[1px] border-b-slate-500/40 bg-orange-700/80 px-6 py-5 shadow-lg transition-all ease-linear">
+    <div class="font-jSans text-2xl font-semibold tracking-wider text-white"><a href="/">Notes App</a></div>
+  </div>
+
+  <div class="flex min-h-screen min-w-[100w] items-center justify-center bg-black/[0.03]">
+    <div
+      class="h-[230px] max-h-[80vh] w-[90vw] max-w-[550px] rounded-lg bg-white text-white shadow-lg shadow-slate-300 pb-5">
+      <div class="flex h-full w-full justify-center">
+
+          <div class="relative flex min-h-full min-w-full flex-col items-center justify-center space-y-4 rounded-md p-5">
+          <h2 class="w-[97%] select-none py-6 text-3xl font-bold tracking-wide text-[#ef4444]  text-center"><%=context%> Updated Successfully&nbsp;!!</h2>
+              <a href="/">
+                  <button type="button" 
+                  class="max-w-[240px] rounded-md border-[1px] border-[#ef4444] px-10 py-3 text-base font-semibold capitalize text-[#ef4444] transition-all ease-linear active:bg-[#ef4444] active:text-white">Back to Homepage</button>
+                </a>
+                  
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+        if (window.history.replaceState) {
+      window.history.replaceState(null, null, window.location.href);
+    }
+    document.querySelectorAll("input").forEach((input) => input.oninput = () => {
+      document.querySelector(".__error").style.display = "none"
+    })
+  </script>
+</body>
+
+</html>

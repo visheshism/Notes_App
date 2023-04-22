@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>Notes App</title>
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <script src="https://scripts.visheshsingh.com/fa"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://scripts.visheshsingh.com/bie"></script>
+    <link rel="stylesheet" href="/styles/index.css">
+</head>
+
+<body class="bg-black/70">
+
+    <div class="fixed h-[100vh] __bg w-[100vw] bg-[#0d0b1bde] bg-no-repeat bg-cover -z-10 transition-all ease-linear">
+    </div>
+
+    <div
+        class="hidden overflow-hidden fixed h-[100vh] w-[100vw] z-20  justify-center overlay__box items-center flex-col ">
+
+        <div
+            class="fixed h-[100%] w-[100%] bg-slate-500/70 z-20 backdrop-blur-lg transition-all ease-in-out overlay__bg">
+        </div>
+
+        <i class="far fas fa-times text-[42px] absolute right-16 top-16 text-white z-50 active:scale-125 transition-all ease-in-out"
+            id="cross"></i>
+
+        <div
+            class="hidden p-4 min-w-[600px] min-h-[300px] flex-col z-30 border-[2px] border-slate-400/60 shadow-lg box__main rounded-2xl bg-slate-950/80">
+            <div class="box__title px-3 py-2 text-4xl font-jSans select-none text-purple-400">Add new Note</div>
+            <div class="flex items-center flex-col my-2">
+                <div class="px-6 py-3 w-full">
+                    <textarea id="textArea" rows="11"
+                        class="text-lg border-2 border-slate-600/40 p-3.5 w-full max-h-[350px] break-all rounded-lg resize-none focus:outline-none focus:border-slate-600/90 font-pops tracking-widest bg-slate-200"
+                        spellcheck="false" autocomplete="false" autofocus></textarea>
+                    <p class="border-2 border-slate-600/40 p-3.5 text-white break-all rounded-lg font-pops tracking-wider max-w-[600px] max-h-[350px] overflow-y-auto select-none hidden"
+                        id="pView">
+                    </p>
+                    <div class="skeleton_model hidden">
+                        <div class="skeleton-text" style="opacity: 0.7; "></div>
+                        <div class="skeleton-text" style="opacity: 0.7;"></div>
+                        <div class="skeleton-text" style="opacity: 0.7;"></div>
+                        <div class="skeleton-text" style="opacity: 0.7; width:80%;"></div>
+                        <div class="skeleton-text" style="opacity: 0"></div>
+                        <div class="skeleton-text" style="opacity: 0"></div>
+                        <div class="skeleton-text" style="opacity: 0.7;"></div>
+                        <div class="skeleton-text" style="opacity: 0.7;"></div>
+                        <div class="skeleton-text" style="opacity: 0.7;"></div>
+                        <div class="skeleton-text" style="opacity: 0.7;"></div>
+                        <div class="skeleton-text" style="opacity: 0.7;"></div>
+                        <div class="skeleton-text" style="opacity: 0.7;"></div>
+                        <div class="skeleton-text" style="opacity: 0.7;"></div>
+                        <div class="skeleton-text" style="opacity: 0.7;"></div>
+                        <div class="skeleton-text" style="opacity: 0.7;"></div>
+                        <div class="skeleton-text" style="opacity: 0.7;"></div>
+                        <div class="skeleton-text" style="opacity: 0.7;"></div>
+                        <div class="skeleton-text" style="opacity: 0.7;"></div>
+                        <div class="skeleton-text" style="opacity: 0.7; width:80%;"></div>
+                    </div>
+
+                </div>
+                <div class="my-3 flex w-full space-x-6 justify-center ">
+                    <button
+                        class="btn__1 border-[2px] text-white bg-red-500/90 px-7 py-2.5 rounded-lg font-lato text-xl font-bold tracking-wider active:scale-105">
+                        Delete
+                    </button>
+                    <button
+                        class="btn__2 border-[2px] text-white bg-red-500/90 px-7 py-2.5 rounded-lg font-lato text-[18px] font-bold tracking-widest active:scale-105">
+                        Create
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- browser has to learn it exists, so , browser learns , only when sent from code, bcoz when dom mnaipulating, it wont read, coz we using comples functions-->
+    <span class="bg-[url('bg.webp')] blur-xl hidden border-slate-50"></span>
+    <span class="bg-slate-50/70 hidden justify-start"></span>
+    <span class="bg-orange-600/80 text-yellow-400 hidden"></span>
+    <span class="border-blue-500 bg-slate-200 text-blue-500 hidden"></span>
+    <span class="bg-couleur1 animate-scaleMeZoom hidden"></span>
+    <span class="bg-couleur2 animate-scale0to100 hidden"></span>
+    <span class="bg-couleur3 animate-scale100to0 hidden"></span>
+    <span class="bg-couleur4 animate-scale0to100rotate hidden"></span>
+    <span class="bg-couleur5 animate-lToR hidden"></span>
+    <span class="bg-couleur6 animate-rToL hidden"></span>
+    <span class="bg-couleur7 shadow-header hidden"></span>
+    <span class="bg-couleur8 shadow-shadow1 hidden"></span>
+    <span class="bg-couleur9 hidden"></span>
+    <span class="bg-couleur10 hidden"></span>
+    <span class="note_el animate-skeleton hidden"></span>
+    <span class="animate-spin hidden loading"></span>
+
+    <div
+        class="z-10 __header bg-[#232044] w-full px-6 flex py-5 shadow-lg border-b-[1px] border-b-slate-500/40 select-none transition-all ease-linear">
+        <div class="text-white text-2xl font-jSans font-semibold tracking-wider">
+            <a href="/">Notes App</a>
+        </div>
+
+        <div class="absolute right-6 top-2.5 flex space-x-5 items-center">
+            <div class="spinner loading_failed w-12 h-12 mr-4 transition-all ease-linear">
+                <img class="max-w-[48px] transition-all ease-linear" src="https://scripts.visheshsingh.com/icon3"
+                    draggable="false">
+            </div>
+            <span class="flex space-x-2 active:scale-110 transition-all ease-in-out" id="addNew"><i
+                    class="text-white fas fa-plus text-2xl" id="addNew" draggable="false"></i><span
+                    class="text-white font-Alk text-xl">
+                    New Note</span></span>
+            <div
+                class="border-[3px] border-blue-500 px-6 py-2 rounded-full __icon backdrop-blur-lg transition-all ease-linear">
+                <span class="px-2 py-0.5">
+                    <i class="text-[26px] -translate-x-4 transition-all ease-linear text-blue-400 fa "
+                        draggable="false"></i>
+                </span>
+            </div>
+            <a href="/me">
+                <i class="fas fa-user text-3xl  px-2 py-[7px] rounded-full text-white active:scale-105"
+                    draggable="false"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <div
+        class="max-w-[97%] flex flex-wrap py-4 px-3 mx-auto mt-2 z-10 notes__container justify-center transition-all ease-in-out">
+        <%notes.reverse().forEach((note)=>{%>
+            <div dpity="<%=note.infIty%>" class="note_el">
+                <%= note.notesDat.length>145?note.notesDat.slice(0,
+                145)+"....":note.notesDat %>
+            </div>
+            <% }) %>
+    </div>
+    <div id="toasts" class="select-none">
+    </div>
+    <script src="/scripts/ibewow.js"></script>
+    <script src="/scripts/index-9ff59946.js"></script>
+
+</body>
+
+</html>
