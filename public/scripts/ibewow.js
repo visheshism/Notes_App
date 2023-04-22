@@ -126,8 +126,8 @@
     // return ellipsesFormattedText
     const ellipsesformat = (data) => {
         let trimmedVer;
-        if (data.length > 165) {
-            trimmedVer = data.slice(0, 155) + "...."
+        if (data.length > 145) {
+            trimmedVer = data.slice(0, 145) + "...."
         } else {
             trimmedVer = data
         }
