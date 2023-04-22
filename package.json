@@ -4,6 +4,9 @@
   "description": "This is a web app for taking notes",
   "main": "server.js",
   "type": "module",
+  "engines": {
+    "node": ">=14.20.1"
+  },
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js"
