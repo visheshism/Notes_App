@@ -18,27 +18,20 @@
 
     <div class="fixed h-[100vh] __bg w-[100vw] bg-[#0d0b1bde] bg-no-repeat bg-cover -z-10 transition-all ease-linear">
     </div>
+    
+    <div class="hidden overflow-hidden fixed h-[100vh] w-[100vw] z-20  justify-center overlay__box items-center flex-col ">
 
-    <div
-        class="hidden overflow-hidden fixed h-[100vh] w-[100vw] z-20  justify-center overlay__box items-center flex-col ">
-
-        <div
-            class="fixed h-[100%] w-[100%] bg-slate-500/70 z-20 backdrop-blur-lg transition-all ease-in-out overlay__bg">
+        <div class="fixed h-[100%] w-[100%] bg-slate-500/70 z-20 backdrop-blur-lg transition-all ease-in-out overlay__bg">
         </div>
 
-        <i class="far fas fa-times text-[42px] absolute right-16 top-16 text-white z-50 active:scale-125 transition-all ease-in-out"
-            id="cross"></i>
+        <i class="far fas fa-times md:text-[42px] text-[34px] absolute md:right-16  right-6 md:top-16 top-6 text-white z-50 active:scale-125 transition-all ease-in-out" id="cross"></i>
 
-        <div
-            class="hidden p-4 min-w-[600px] min-h-[300px] flex-col z-30 border-[2px] border-slate-400/60 shadow-lg box__main rounded-2xl bg-slate-950/80">
-            <div class="box__title px-3 py-2 text-4xl font-jSans select-none text-purple-400">Add new Note</div>
+        <div class="hidden p-4 md:min-w-[600px] min-w-[450px] min-h-[300px] md:max-h-[100%] max-h-[80%] z-30 border-[2px] border-slate-400/60 shadow-lg box__main rounded-2xl bg-slate-950/80">
+            <div class="box__title px-3 py-2 md:text-4xl text-2xl font-jSans select-none text-purple-400">Add new Note</div>
             <div class="flex items-center flex-col my-2">
-                <div class="px-6 py-3 w-full">
-                    <textarea id="textArea" rows="11"
-                        class="text-lg border-2 border-slate-600/40 p-3.5 w-full max-h-[350px] break-all rounded-lg resize-none focus:outline-none focus:border-slate-600/90 font-pops tracking-widest bg-slate-200"
-                        spellcheck="false" autocomplete="false" autofocus></textarea>
-                    <p class="border-2 border-slate-600/40 p-3.5 text-white break-all rounded-lg font-pops tracking-wider max-w-[600px] max-h-[350px] overflow-y-auto select-none hidden"
-                        id="pView">
+                <div class="px-6 md:py-3 py-0 w-full md:max-h-[350px] max-h-[250px]">
+                    <textarea id="textArea" rows="11" class="md:text-lg text-base border-2 border-slate-600/40 p-3.5 w-full md:max-h-[350px] max-h-[250px] break-all rounded-lg resize-none focus:outline-none focus:border-slate-600/90 font-pops tracking-widest bg-slate-200" spellcheck="false" autocomplete="false" autofocus></textarea>
+                    <p class="border-2 border-slate-600/40 p-3.5 text-white break-all rounded-lg font-pops tracking-wider max-w-[600px] md:max-h-[350px] max-h-[200px] overflow-y-auto select-none hidden" id="pView">
                     </p>
                     <div class="skeleton_model hidden">
                         <div class="skeleton-text" style="opacity: 0.7; "></div>
@@ -63,13 +56,11 @@
                     </div>
 
                 </div>
-                <div class="my-3 flex w-full space-x-6 justify-center ">
-                    <button
-                        class="btn__1 border-[2px] text-white bg-red-500/90 px-7 py-2.5 rounded-lg font-lato text-xl font-bold tracking-wider active:scale-105">
+                <div class="md:my-3 mt-5 flex w-full space-x-6 justify-center ">
+                    <button class="btn__1 border-[2px] text-white bg-red-500/90 md:px-7 px-5 md:py-2.5 py-2 rounded-lg font-lato md:text-xl text-lg font-bold tracking-wider active:scale-105">
                         Delete
                     </button>
-                    <button
-                        class="btn__2 border-[2px] text-white bg-red-500/90 px-7 py-2.5 rounded-lg font-lato text-[18px] font-bold tracking-widest active:scale-105">
+                    <button class="btn__2 border-[2px] text-white bg-red-500/90 md:px-7 px-5 md:py-2.5 py-2 rounded-lg font-lato md:text-xl text-lg font-bold tracking-widest active:scale-105">
                         Create
                     </button>
                 </div>
@@ -97,31 +88,24 @@
     <span class="note_el animate-skeleton hidden"></span>
     <span class="animate-spin hidden loading"></span>
 
-    <div
-        class="z-10 __header bg-[#232044] w-full px-6 flex py-5 shadow-lg border-b-[1px] border-b-slate-500/40 select-none transition-all ease-linear">
-        <div class="text-white text-2xl font-jSans font-semibold tracking-wider">
+<div class="z-10 __header bg-[#232044] w-full px-6 flex md:py-[1.4rem] py-4 shadow-lg border-b-[1px] border-b-slate-500/40 select-none transition-all ease-linear min-h-[] ">
+        <div class="text-white md:text-2xl text-xl md:-ml-0 sm:-ml-1 -ml-2.5 font-jSans font-semibold tracking-wider ">
             <a href="/">Notes App</a>
         </div>
 
-        <div class="absolute right-6 top-2.5 flex space-x-5 items-center">
-            <div class="spinner loading_failed w-12 h-12 mr-4 transition-all ease-linear">
-                <img class="max-w-[48px] transition-all ease-linear" src="https://scripts.visheshsingh.com/icon3"
-                    draggable="false">
+        <div class="absolute right-6 top-2.5 flex sm:space-x-5 space-x-3 items-center">
+            <div class="spinner loading_failed md:w-12 w-10 md:h-12 h-10 md:mr-4 mr-3 transition-all ease-linear">
+                <img class="md:max-w-[48px] max-w-[38px] transition-all ease-linear" src="https://scripts.visheshsingh.com/icon1" draggable="false">
             </div>
-            <span class="flex space-x-2 active:scale-110 transition-all ease-in-out" id="addNew"><i
-                    class="text-white fas fa-plus text-2xl" id="addNew" draggable="false"></i><span
-                    class="text-white font-Alk text-xl">
+            <span class="flex space-x-2 active:scale-110 transition-all ease-in-out" id="addNew"><i class="text-white fas fa-plus md:text-2xl text-xl" id="addNew" draggable="false"></i><span class="text-white font-Alk md:text-xl text-base ">
                     New Note</span></span>
-            <div
-                class="border-[3px] border-blue-500 px-6 py-2 rounded-full __icon backdrop-blur-lg transition-all ease-linear">
+             <div class="sm:border-[3px] border-[2px] border-blue-500 md:px-6 px-5 md:py-2 py-1.5 rounded-full __icon backdrop-blur-lg transition-all ease-linear">
                 <span class="px-2 py-0.5">
-                    <i class="text-[26px] -translate-x-4 transition-all ease-linear text-blue-400 fa "
-                        draggable="false"></i>
+                    <i class="md:text-[26px] text-base -translate-x-4 transition-all ease-linear text-blue-400 fa " draggable="false"></i>
                 </span>
             </div>
             <a href="/me">
-                <i class="fas fa-user text-3xl  px-2 py-[7px] rounded-full text-white active:scale-105"
-                    draggable="false"></i>
+                <i class="fas fa-user md:text-3xl text-xl md:px-2 px-0.5 py-[7px] rounded-full text-white active:scale-105" draggable="false"></i>
             </a>
         </div>
 
