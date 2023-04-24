@@ -88,7 +88,7 @@
     <span class="note_el animate-skeleton hidden"></span>
     <span class="animate-spin hidden loading"></span>
 
-<div class="z-10 __header bg-[#232044] w-full px-6 flex md:py-[1.4rem] py-4 shadow-lg border-b-[1px] border-b-slate-500/40 select-none transition-all ease-linear min-h-[] ">
+<div class="z-10 __header bg-[#232044] w-full px-6 flex md:py-[1.4rem] py-4 shadow-lg border-b-[1px] border-b-slate-500/40 select-none transition-all ease-linear min-h-[60px] ">
         <div class="text-white md:text-2xl text-xl md:-ml-0 sm:-ml-1 -ml-2.5 font-jSans font-semibold tracking-wider ">
             <a href="/">Notes App</a>
         </div>
@@ -112,7 +112,7 @@
     </div>
 
     <div
-        class="max-w-[97%] flex flex-wrap py-4 px-3 mx-auto mt-2 z-10 notes__container justify-center transition-all ease-in-out">
+        class="md:max-w-[97%] max-w-[100%] flex flex-wrap py-4 px-3 mx-auto mt-2 z-10 notes__container justify-center transition-all ease-in-out">
         <%notes.reverse().forEach((note)=>{%>
             <div dpity="<%=note.infIty%>" class="note_el">
                 <%= note.notesDat.length>145?note.notesDat.slice(0,
