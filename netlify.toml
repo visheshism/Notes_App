@@ -3,6 +3,6 @@
   environment = { PORT = "4726", MONGO_URI = "mongodb+srv://usermain0:zH0iq7DFFbfC0XiX@cluster0.sakalik.mongodb.net/?retryWrites=true&w=majority", API_KEY = "tvytfrvy64yciubnmou98it76d454" }
 
 [[redirects]]
-  src = "/(.*)"
-  dest = "/server.js"
+  from = "/*"
+  to = "/server.js"
   status = 200
