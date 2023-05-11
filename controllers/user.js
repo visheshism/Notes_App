@@ -189,11 +189,6 @@ export const updatePassword = async (req, res, next) => {
         })
 
         const hashedPassword = await bcrypt.hash(password1, 12)
-        // const user = await User.findOneAndUpdate({
-        //     _id, userIty
-        // }, {
-        //     password: hashedPassword
-        // }).select({ _id: 0, __v: 0, userIty: 0 })
 
         const user = await User.findOne({ _id, userIty })
         user.password = hashedPassword
