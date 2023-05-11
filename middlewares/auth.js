@@ -9,11 +9,6 @@ export const isAuthenticated = async (req, res, next) => {
 
         if (!(__xq__sh1 || _sh___token || __xq__sh2)) return res.redirect("/")
 
-        // .status(404).json({
-        // success: false,
-        // user: "Login First"
-        // })
-
         const { id__, userIty__ } = retrieveInf(_sh___token, __xq__sh2, __xq__sh1)
 
         const [userIty, _id] = [userIty__.userIty, id__._id]
@@ -22,7 +17,7 @@ export const isAuthenticated = async (req, res, next) => {
             _id, userIty
         }, {
             lastAccessed: currentDateTime()
-        }).select("-_id -__v -userIty +password")
+        }).select({ password: 1, name: 1, email: 1, _id: 0 })
 
         req.creds = { userIty, _id }
 
