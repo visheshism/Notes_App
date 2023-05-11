@@ -98,7 +98,7 @@ export const register = async (req, res, next) => {
     }
 }
 
-export const getMyProfile = (req, res) => {
+export const getMyProfile = (req, res, next) => {
     try {
 
         res.render("userNav", {
@@ -120,27 +120,27 @@ export const logout = (req, res, next) => {
     res
         .cookie("_sh___token", "", {
             expires: new Date(Date.now()),
-            sameSite:  "none",
-            secure:  true,
+            sameSite: "none",
+            secure: true,
 
         })
         .cookie("__xq__sh2", "", {
             expires: new Date(Date.now()),
-            sameSite:  "none",
-            secure:  true,
+            sameSite: "none",
+            secure: true,
 
         })
         .cookie("__xq__sh1", "", {
             expires: new Date(Date.now()),
-            sameSite:  "none",
-            secure:  true,
+            sameSite: "none",
+            secure: true,
 
         })
         .redirect("/")
 
 }
 
-export const updateEmail = async (req, res) => {
+export const updateEmail = async (req, res, next) => {
     try {
         const { userIty, _id } = req.creds
 
@@ -171,7 +171,7 @@ export const updateEmail = async (req, res) => {
     }
 }
 
-export const updatePassword = async (req, res) => {
+export const updatePassword = async (req, res, next) => {
     try {
 
 
