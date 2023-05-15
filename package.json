@@ -11,7 +11,7 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Vishesh Singh",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
