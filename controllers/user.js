@@ -2,9 +2,7 @@ import ErrorHandler from "../middlewares/error.js";
 import { User } from "../models/user.js";
 import jwt from "jsonwebtoken";
 import { JWT_SECRET } from "../data/env.js";
-
 import bcrypt from "bcrypt";
-
 import { genArr } from "../utils/functions.js";
 
 

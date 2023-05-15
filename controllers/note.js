@@ -8,11 +8,6 @@ export const newNote = async (req, res, next) => {
 
         const { notesData } = req.body
 
-        // const newNote = await Note.create({
-        //     infIty: genArr(18),
-        //     notesDat: notesData,
-        //     user: _id
-        // })
         const newNote = await Note.create({
             infIty: genArr(18),
             notesDat: notesData,

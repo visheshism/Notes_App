@@ -32,20 +32,20 @@ export const checkUser = async (req, res, next) => {
             .cookie("_sh___token", _sh___token, {
                 httpOnly: true,
                 maxAge: 90 * 60 * 1000,
-                // sameSite: "Strict",
-                // secure: true,
+                sameSite: "Strict",
+                secure: true,
             })
             .cookie("__xq__sh2", __xq__sh2, {
                 httpOnly: true,
                 maxAge: 90 * 60 * 1000,
-                // sameSite: "Strict",
-                // secure: true,
+                sameSite: "Strict",
+                secure: true,
             })
             .cookie("__xq__sh1", __xq__sh1, {
                 httpOnly: true,
                 maxAge: 90 * 60 * 1000,
-                // sameSite: "Strict",
-                // secure: true,
+                sameSite: "Strict",
+                secure: true,
             })
             .render("index", { notes })
 
