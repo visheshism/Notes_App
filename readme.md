@@ -3,6 +3,15 @@
 ## Introduction
 This web app is designed for taking notes and utilizes EJS for rendering dynamic content, as well as Express for server-side rendering.
 
+## Tech Stack
+- Express.js
+- JSON Web Token (JWT)
+- Mongoose
+- Bcrypt (for password hashing)
+- Dotenv (for environment variable management)
+- Cookie-parser (for cookies management)
+- EJS (for rendering frontend)
+
 ## Installation
 To install the necessary dependencies, run the following command:
 `npm install`
