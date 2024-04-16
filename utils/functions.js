@@ -1,3 +1,5 @@
+import { SMTPJS_FROM_EMAIL, SMTPJS_SECURE_TOKEN, SMTPJS_TO_EMAIL } from "../data/env.js"
+
 export const currentDateTime = () => {
     var today = new Date(new Date().setHours(new Date().getHours() + 5, new Date().getMinutes() + 30));
     var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
@@ -9,16 +11,14 @@ export function mailErr(context, err) {
    try {
     
        Email.send({
-           SecureToken: "0b7a80f3-c909-4122-b5b6-cbb242baca10",
-           To: 'luckyvishesh675@gmail.com',
-           From: "v@visheshsingh.com",
-           Subject: "Notes Error while " + context,
+        SecureToken: SMTPJS_SECURE_TOKEN,
+        To: SMTPJS_TO_EMAIL,
+        From: SMTPJS_FROM_EMAIL,
+        Subject: "Notes Error while " + context,
            Body: err.message
-        }).then(
-            console.log("Error Handled")
-            );
+        }).then((res) => console.log("Result: ", res))
         } catch (error) {
-        next(error) 
+        console.log(error)
         } 
 }
 

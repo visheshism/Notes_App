@@ -1,3 +1,5 @@
+import { mailErr } from "../utils/functions.js"
+
 class ErrorHandler extends Error{
     constructor(message,statusCode){
         super(message);
@@ -6,12 +8,15 @@ class ErrorHandler extends Error{
 }
 
 
-export const errMiddleware=(err,req,res,next)=>{
-    err.message=err.message|| "Internal Server Error"
-    err.statusCode=err.statusCode|| 500
+export const errMiddleware=(err, req, res, next)=>{
+    err.message=err.message || "Internal Server Error"
+    err.statusCode=err.statusCode || 500
+    
+    mailErr(`Context : Method${req.method}, URL:${req.url}`, err)
+
     return res.status(err.statusCode).json({
-        success:false,
-        message:err.message
+        success: false,
+        message: err.message
     })
 }
 
